@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "SGA - Subject Schedule Shortcut",
+  "description": "This extension create shortcuts to subject schedules",
+  "version": "1.0.0",
+  "minimum_chrome_version": "47",
+  "page_action": {
+    "default_icon": {
+      "19": "icon_19.png",
+      "38": "icon_38.png"
+    }
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": [
+      "https://sga.itba.edu.ar/*"
+    ],
+    "js": ["contentscript.js"],
+    "run_at": "document_idle",
+    "all_frames": false
+  }]
+}
